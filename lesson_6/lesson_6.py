@@ -10,9 +10,8 @@ def counter(random_list: list) -> set:
     print(random_list)
     count_lst = [random_list.count(x) for x in random_list]
     print(count_lst)
-    lst_set = set([(random_list[count_lst.index(i)], i) for i in count_lst if i > 1])
-    return lst_set
+    lst = set((i, n) for i, n in zip(random_list, count_lst) if n > 1)
+    return lst
 
-#print(create_rand_list(10))
 print(counter(create_rand_list(10)))
 
